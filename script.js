@@ -44,6 +44,11 @@ const handleNumberClick = (numberDiv, number) => {
             checkForMatch();
         }
     }
+    else if (numberDiv.classList.contains('selected')) {
+        numberDiv.classList.remove('selected');
+        numberDiv.style.backgroundColor = '';
+        selectedNumbers = selectedNumbers.filter((num) => num !== number);
+    }
 };
 
 const checkForMatch = () => {
@@ -66,6 +71,8 @@ const checkForMatch = () => {
             });
             resetSelection();
         }, 1000);
+        generateNumbers();
+        renderNumbers();
     }
 };
 
