@@ -59,9 +59,13 @@ const checkForMatch = () => {
     } else {
         score = 0;
         scoreDisplay.textContent = `Счет: ${score}`;
-        resetSelection();
-        generateNumbers();
-        renderNumbers();
+        setTimeout(() => {
+            selectedDivs.forEach(div => {
+                div.classList.remove('selected'); 
+                div.style.backgroundColor = ''; // Сбрасываем цвет
+            });
+            resetSelection();
+        }, 1000);
     }
 };
 
