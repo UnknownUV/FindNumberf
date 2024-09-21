@@ -59,10 +59,9 @@ const checkForMatch = () => {
     } else {
         score = 0;
         scoreDisplay.textContent = `Счет: ${score}`;
-        setTimeout(() => {
-            selectedDivs.forEach(div => div.classList.remove('selected')); // сбрасываем выделение
-            resetSelection();
-        }, 1000);
+        resetSelection();
+        generateNumbers();
+        renderNumbers();
     }
 };
 
